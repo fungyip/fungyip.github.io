@@ -105,11 +105,11 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Science Portfolio"
   location         : "London, Hong Kong"
-  email            :
+  email            : "fung.yip@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
+      url: mailto:fung.yip@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -288,5 +288,3 @@ defaults:
       comments: # true
       share: true
       related: true
-
-    
