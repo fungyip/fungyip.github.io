@@ -106,6 +106,7 @@ author:
   bio              : "Data Science Portfolio"
   location         : "London, Hong Kong"
   email            : "fung.yip@gmail.com"
+  github           : "fungyip"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
