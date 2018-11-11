@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Fung YIP"
 title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
+name                     : "Fung YIP"
+description              : "Data Science Portfolio"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -101,10 +101,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Fung YIP"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
+  bio              : "Data Science Portfolio"
+  location         : "London, Hong Kong"
   email            :
   links:
     - label: "Email"
@@ -288,3 +288,12 @@ defaults:
       comments: # true
       share: true
       related: true
+
+      # _pages
+    - scope:
+        path: ""
+        type: pages
+        values:
+          layout: single
+          author_profile: true
+          
