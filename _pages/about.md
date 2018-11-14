@@ -15,4 +15,4 @@ This blog will showcase some of the analyses I have been working using R or Pyth
 
 
 ## Data Science
-I used R![R](/images/R.png)
+I used R![R](/images/logo/R.png)
