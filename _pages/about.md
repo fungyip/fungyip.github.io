@@ -22,7 +22,10 @@ I used R![R](/images/logo/r.png)
 
 
 $$X_i$$
+
 $$X_{i}$$
+
+$$X^2_{i,j}$$
 
 
 \[\begin{bmatrix}
