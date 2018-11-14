@@ -28,11 +28,5 @@ $$X_{i}$$
 $$X^2_{i,j}$$
 
 
-\[\begin{bmatrix}
-1&0&0\\
-0&1&0\\
-0&0&1\\
-\end{bmatrix}\]
-
 
 \[p(\theta) = \mathbf{\prod}_{i,c}p(\mathbf{\theta}^i(c))\]
