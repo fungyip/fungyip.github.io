@@ -19,12 +19,12 @@ This blog will showcase some of the analyses I have been working using R or Pyth
 I used R![R](/images/logo/r.png)
 
 
+$$X_i$$
+$$X_{i}$$
+
+
 \[\begin{bmatrix}
-
 1&0&0\\
-
 0&1&0\\
-
 0&0&1\\
-
 \end{bmatrix}\]
