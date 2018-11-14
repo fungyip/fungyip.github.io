@@ -3,6 +3,7 @@ title: "About"
 permalink: /about/
 header:
   image: "/images/leaves_bannerfung.png"
+mathjax: true
 ---
 
 ## About
@@ -16,3 +17,14 @@ This blog will showcase some of the analyses I have been working using R or Pyth
 
 ## Data Science
 I used R![R](/images/logo/r.png)
+
+
+\[\begin{bmatrix}
+
+1&0&0\\
+
+0&1&0\\
+
+0&0&1\\
+
+\end{bmatrix}\]
