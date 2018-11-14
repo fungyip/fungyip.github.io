@@ -18,6 +18,9 @@ This blog will showcase some of the analyses I have been working using R or Pyth
 ## Data Science
 I used R![R](/images/logo/r.png)
 
+:smile:
+
+
 
 $$X_i$$
 $$X_{i}$$
