@@ -3,7 +3,7 @@ title: "About"
 permalink: /about/
 header:
   image: "/images/leaves_bannerfung.png"
-mathjax: true
+usemathjax: true
 ---
 
 ## About
@@ -19,7 +19,6 @@ This blog will showcase some of the analyses I have been working using R or Pyth
 I used R![R](/images/logo/r.png)
 
 :smile:
-
 
 
 $$X_i$$
