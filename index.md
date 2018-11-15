@@ -39,7 +39,7 @@ Data Scientist is the most sexiest job of the 21st century. That said, I don't f
  >"If Heaven gave me another 50 years to live, I would spend them studying iChing and perhaps then I would beware myself of troubles."
 
  Confucius wishes he has more time to learn iChing and dedicated himself to it.
- For me same same - Data & iChing - this will be my **lifetime project** to blend two 2gether.
+ For me same same - Data & iChing will be my **lifetime project** to blend two 2gether.
 
 <!-- ### Digital Analytics
 
