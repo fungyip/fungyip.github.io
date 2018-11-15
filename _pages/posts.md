@@ -5,7 +5,8 @@ permalink: /posts/
 title: "Posts"
 excerpt: "Posts"
 header:
-  overlay_image: ../images/dataiching_banner.jpg
+  image: ../images/dataiching_banner.jpg
+  #overlay_image: ../images/dataiching_banner.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 ---
 
