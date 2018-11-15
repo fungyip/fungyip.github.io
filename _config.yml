@@ -62,7 +62,7 @@ google_ad_slot           :
 # Site Author
 author:
   name             : "Fung YIP"
-  avatar           : "/images/fung.png"
+  avatar           : "fung.png"
   bio              : "In God we trust; all others bring Data"
   location         : "Hong Kong, London"
   email            : "fung.yip@gmail.com"
