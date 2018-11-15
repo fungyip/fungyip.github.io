@@ -18,7 +18,9 @@ This blog will showcase some of the analyses I have been working using R or Pyth
 ### Econometrics
 
 Econometrics for me is like "love at first sight". I was first introduced by my classmate at uni that there is a thingy called "Econ" "Metric" when I was doing my Economics degree. My first regression model to build was to predict the price of meat, which is fabulous.
-[ML](/https://imgs.xkcd.com/comics/machine_learning.png)
+
+![Alt Text](https://imgs.xkcd.com/comics/machine_learning.png)
+
 I continued to study Masters in Economics whose syllabus was heavily involved in statistical modelling. This enables me to build a strong foundation on the mathematical side in which I can ride on it to life-learn machine learning.
 
 ### Business Intelligence
