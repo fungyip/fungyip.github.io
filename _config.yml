@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Fung YIP"
 title_separator          : "-"
 name                     : "Fung YIP"
-description              : "Data Science Portfolio"
+description              : "In God we trust; all others bring Data"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
@@ -63,7 +63,7 @@ google_ad_slot           :
 author:
   name             : "Fung YIP"
   avatar           : "/images/fung.png"
-  bio              : "Data Science Portfolio"
+  bio              : "In God we trust; all others bring Data"
   location         : "Hong Kong, London"
   email            : "fung.yip@gmail.com"
   uri              :
