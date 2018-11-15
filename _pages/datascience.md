@@ -9,3 +9,10 @@ header:
 ## Data Science
 
 I love Data Science
+
+
+$$X_i$$
+
+$$X_{i}$$
+
+$$X^2_{i,j}$$
