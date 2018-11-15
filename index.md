@@ -15,7 +15,7 @@ expressing way of simplicity through Data [0,1] Dao **《易數道》**.
 
 This blog will showcase some of the analyses I have been working using R or Python.
 
-### Econometrics
+## Econometrics
 
 Econometrics for me is like "love at first sight". I was first introduced by my classmate at uni that there is a thingy called "Econ" "Metric" when I was doing my Economics degree. My first regression model to build was to predict the price of meat, which is fabulous.
 
@@ -23,18 +23,18 @@ Econometrics for me is like "love at first sight". I was first introduced by my 
 
 I continued to study Masters in Economics whose syllabus was heavily involved in statistical modelling. This enables me to build a strong foundation on the mathematical side in which I can ride on it to life-learn machine learning.
 
-### Business Intelligence
+## Business Intelligence
 
-I fist cut my teeth on Business Intelligence from work - building a set of KPIs to monitor company's performance. This field has evolved a lot since both in technology and usage wise. Tools itself which becomes more intelligence are moving towards user-centric with strong emphasis of Data viz.
+I fist cut my teeth on Business Intelligence from work - building a set of KPIs to monitor company's performance. This field has evolved a lot both in technology and usage wise. Tools itself which becomes more intelligent are moving towards user-centric with strong emphasis of Data viz.
 
 I feel great that I have opportunities to use both Tableau and Qlik sense to apply in cooperate environment, the latter of which includes good ETL capability and now I really fall in love.
 
-### Data Science
+## Data Science
 Data Scientist is the most sexiest job of the 21st century. That said, I don't feel like I am sexy at all. This field has evolved amazingly fast and I expect this term data science will be replaced by AI or other synonyms terms in the coming years. I use R a lot, making use of tidyverse concept and now increasingly use python for analyses.
 
  As I am Econometrician turned Data Scientist, I love Time Series forecasting a lot. I 'kaizen' to learn other type of machine learning to add my Data Science arsenal.
 
-### Data & iChing
+## DataiChing
  iChing is also known as Classic of Changes.  Just like Confucius says,
  >"If Heaven gave me another 50 years to live, I would spend them studying iChing and perhaps then I would beware myself of troubles."
 
