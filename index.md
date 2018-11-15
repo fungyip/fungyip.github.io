@@ -3,7 +3,8 @@ title: About
 layout: single
 author_profile: true
 header:
-  overlay_image: "images/leaves_bannerfung.png"
+  #overlay_image: "images/leaves_banner.png"
+  image: "/images/leaves_bannerfung.png"
   overlay_filter: 0 # same as adding an opacity of 0.5 to a black background
   exceprt: "                                                                               "                                                          
 ---
