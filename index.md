@@ -34,7 +34,7 @@ Data Scientist is the most sexiest job of the 21st century. That said, I don't f
 
  As I am Econometrician turned Data Scientist, I love Time Series forecasting a lot. I 'kaizen' to learn other type of machine learning to add my Data Science arsenal.
 
-
+<img class="inline-icon" src="../images/logo/python.png" width="25" alt="python icon" title="Python"><span class='salient'>Python</span>
 
 ## DataiChing
  iChing is also known as Classic of Changes.  Just like Confucius says,
