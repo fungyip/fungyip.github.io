@@ -28,6 +28,7 @@ header:
 </div>
 
 #### Data Viz
+<div>
 <img src="../images/logo/qliksense.PNG" width="30" alt="qliksense icon" title="qliksense">
 qliksense
 <img src="../images/logo/tableau.PNG" width="30" alt="tableau icon" title="tableau">
