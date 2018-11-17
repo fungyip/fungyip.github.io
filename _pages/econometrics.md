@@ -1,12 +1,20 @@
 ---
 permalink: /econometrics/
 title: Econometrics
+use_math: true
 author_profile: false
 ---
 
 
-
 ## Econometrics
+$$X_i$$
+
+$$X_{i}$$
+
+$$X^2_{i,j}$$
+
+
+<!---
 
 <div class='card-section'>
     <div class='skills'>
@@ -49,3 +57,5 @@ author_profile: false
         </div>
         </div>
         </div>
+
+--->
