@@ -17,7 +17,7 @@ author_profile: false
                 dplyr
             </div>
             <div class="skills-item">
-                <img src="../images/logo/purrr.pjpg" width="30" alt="purrr icon" title="purrr">
+                <img src="../images/logo/purrr.jpg" width="30" alt="purrr icon" title="purrr">
                 purrr
             </div>
         </div>
@@ -46,4 +46,6 @@ author_profile: false
                 <img src="../images/logo/tableau.PNG" width="30" alt="tableau icon" title="tableau">
                 tableau
             </div>
+        </div>
+        </div>
         </div>
