@@ -30,18 +30,22 @@ I fist cut my teeth on Business Intelligence from work - building a set of KPIs 
 I feel great that I have opportunities to use both <img class="inline-icon" src="../images/logo/tableau.PNG" width="30" alt="tableau icon" title="Tableau"><span class='salient'>Tableau</span> and <img class="inline-icon" src="../images/logo/qliksense.PNG" width="30" alt="qliksense icon" title="Qliksense"><span class='salient'>Qliksense</span> to apply in cooperate environment, the latter of which includes good ETL capability and now I really fall in love.
 
 ## Data Science
-Data Scientist is the most sexiest job of the 21st century. That said, I don't feel like I am sexy at all. This field has evolved amazingly fast and I expect this term data science will be replaced by AI or other synonyms terms in the coming years. I use <img class="inline-icon" src="../images/logo/r.png" width="30" alt="r icon" title="R"><span class='salient'>R</span> a lot, making use of tidyverse concept and now increasingly use <img class="inline-icon" src="../images/logo/python.PNG" width="25" alt="python icon" title="Python"><span class='salient'>Python</span> for analyses.
+Data Scientist is the most sexiest job of the 21st century. That said, I don't feel like I am sexy at all. This field has evolved amazingly fast and I expect this term data science will be replaced by AI or other synonyms terms in the coming years. I use <img class="inline-icon" src="../images/logo/r.png" width="25" alt="r icon" title="R"><span class='salient'>R</span> a lot, making use of tidyverse concept and now increasingly use <img class="inline-icon" src="../images/logo/python.PNG" width="25" alt="python icon" title="Python"><span class='salient'>Python</span> for analyses.
 
- As I am Econometrician turned Data Scientist, I love Time Series forecasting a lot. I 'kaizen' to learn other type of machine learning to add my Data Science arsenal.
+As I am Econometrician turned Data Scientist, I love Time Series forecasting a lot. I 'kaizen' to learn other type of machine learning to add my Data Science arsenal.
 
 <!---
 <img class="inline-icon" src="../images/logo/qliksense.PNG" width="30" alt="qliksense icon" title="Qliksense"><span class='salient'>Qliksense</span>
 <img class="inline-icon" src="../images/logo/tableau.PNG" width="30" alt="tableau icon" title="Tableau"><span class='salient'>Tableau</span>
+<img class="inline-icon" src="../images/logo/iching.jpg" width="30" alt="iching icon" title="iChing"><span class='salient'>iChing</span>
 
+
+--->
 
 
 ## DataiChing
- iChing is also known as Classic of Changes.  Just like Confucius says,
+<img class="inline-icon" src="../images/logo/iching.jpg" width="30" alt="iching icon" title="iChing"><span class='salient'>iChing</span>
+ is also known as Classic of Changes.  Just like Confucius says,
  >"If Heaven gave me another 50 years to live, I would spend them studying iChing and perhaps then I would beware myself of troubles."
 
  Confucius wishes he has more time to learn iChing and dedicated himself to it.
