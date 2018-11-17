@@ -39,11 +39,11 @@ author_profile: false
         <div class='skills-col'>
             <div class="skills-cat">Data Viz/DL</div>
             <div class="skills-item">
-                <img src="../images/logo/qliksense.png" width="30" alt="qliksense icon" title="qliksense">
+                <img src="../images/logo/qliksense.PNG" width="30" alt="qliksense icon" title="qliksense">
                 qliksense
             </div>
             <div class="skills-item">
-                <img src="../images/logo/tableau.png" width="30" alt="tableau icon" title="tableau">
+                <img src="../images/logo/tableau.PNG" width="30" alt="tableau icon" title="tableau">
                 tableau
             </div>
         </div>
