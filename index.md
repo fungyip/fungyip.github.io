@@ -17,7 +17,7 @@ This blog will showcase some of the analyses I have been working using R or Pyth
 
 ## Econometrics
 
-Econometrics for me is like "love at first sight". I was first introduced by my classmate at uni that there is a thingy called "Econ" "Metric" when I was doing my Economics degree. My first regression model to build was to predict the price of meat, which is fabulous.
+Econometrics for me is like :heart:"love at first sight". I was first introduced by my classmate at uni that there is a thingy called "Econ" "Metric" when I was doing my Economics degree. My first regression model to build was to predict the price of meat, which is fabulous.
 
 ![Alt Text](https://imgs.xkcd.com/comics/machine_learning.png)
 
@@ -33,6 +33,8 @@ I feel great that I have opportunities to use both <img class="inline-icon" src=
 Data Scientist is the most sexiest job of the 21st century. That said, I don't feel like I am sexy at all. This field has evolved amazingly fast and I expect this term data science will be replaced by AI or other synonyms terms in the coming years. I use <img class="inline-icon" src="../images/logo/r.png" width="25" alt="r icon" title="R"><span class='salient'>R</span> a lot, making use of tidyverse concept and now increasingly use <img class="inline-icon" src="../images/logo/python.PNG" width="25" alt="python icon" title="Python"><span class='salient'>Python</span> for analyses.
 
 As I am Econometrician turned Data Scientist, I love Time Series forecasting a lot. I 'kaizen' to learn other type of machine learning to add my Data Science arsenal.
+
+
 
 <!---
 <img class="inline-icon" src="../images/logo/qliksense.PNG" width="30" alt="qliksense icon" title="Qliksense"><span class='salient'>Qliksense</span>
