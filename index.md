@@ -53,6 +53,14 @@ As I am Econometrician turned Data Scientist, I love Time Series forecasting a l
  Confucius wishes he has more time to learn iChing and dedicated himself to it.
  For me same same - Data & iChing will be my **lifetime project** to blend two 2gether.
 
+
+### Disclaimer
+The is my personal project done in my spare time. The views and opinions expressed here are mine alone and do not represent the views of my previous or current employers. 
+
+
+
+
+
 <!-- ### Digital Analytics
 
 Digital Analytics has gained popularity as O2O took off. When I was in newspaper industry which needs to keep track of users online behavior and consumption. I 'kaizen' to learn how to track an app usage, attempting to understand the whole online ecosystem. Google Analytics is the main tool I use for digital  for tracking analyses
