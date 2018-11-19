@@ -15,6 +15,10 @@ header:
     dplyr
     <img src="../images/logo/purrr.jpg" width="30" alt="purrr icon" title="purrr">
     purrr
+    <img src="../images/logo/np.png" width="30" alt="numpy icon" title="numpy">
+    numpy
+    <img src="../images/logo/pandas.png" width="30" alt="pandas icon" title="pandas">
+    pandas
 </div>
 
 #### Machine Learning
@@ -33,4 +37,7 @@ header:
 qliksense
 <img src="../images/logo/tableau.PNG" width="30" alt="tableau icon" title="tableau">
 tableau
+<img src="../images/logo/ggplot2.png" width="30" alt="ggplot2 icon" title="ggplot2">
+ggplot2
+
 </div>
