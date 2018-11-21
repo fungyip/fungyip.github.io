@@ -8,7 +8,7 @@ author_profile: false
 
 ### the Essence of Econometrics
 
-#### Least Squares Method
+#### Least Squares
 ![Alt Text](http://4.bp.blogspot.com/-qn3YRa-rr50/TZOzK29BAXI/AAAAAAAABCA/tZIYm6ApLhs/s1600/metrics_shirts_academicabstractions_com.jpg)
 
 
@@ -37,13 +37,6 @@ $$\mathbf{(X'X)^{-1}X'y =(X^{\prime}X)^{-1}(X^{\prime}X)b}$$
 $$\mathbf{(X'X)^{-1}X'y = Ib}$$
 
 $$\mathbf{(X'X)^{-1}X'y = b}$$
-
-
-
-
-
-
-
 
 
 

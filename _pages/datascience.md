@@ -3,7 +3,7 @@ permalink: /datascience/
 title: Data Science
 use_math: true
 header:
-  overlay_image: ../dataiching_banner.jpg
+  overlay_image: ../images/matrix_cover.jpg
   overlay_filter: 0.2 # same as adding an opacity of 0.5 to a black background
 ---
 
