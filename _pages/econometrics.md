@@ -32,10 +32,10 @@ $$\mathbf{(X'X)^{-1}X'y = b}$$| OLS
 $$\mathbf{b} = \mathbf{(X'X)^{-1}X^{\prime}y}$$| OLS
 
 #### 8 Classical OLS Assumptions
-Assumption / Violation may imply      | Mathematical Expression       
--------------------------------------|-----------------------------------------
-Linearity / Nonlinearity       | $$Y_t = \alpha + \beta X_t + ε_t$$
-Expected value of error term is zero / Biased intercept | $$E(ε∣X) = 0$$   
+Assumption / Violation may imply | Mathematical Expression       
+---------------------------------|------------------------
+Linearity | $$Y_t = \alpha + \beta X_t + ε_t$$
+Expected value of error term is zero | $$E(ε∣X) = 0$$   
 X is non-stochastic and fixed in repeated samples (exogeneity) | $$Cov(X_s, ε_t) = 0$$
 Serial Independence | $$Cov(ε_s, ε_t) = 0 $$        
 Homoskedasticity | $$Var(ε_t) = \sigma^2 = constant$$
