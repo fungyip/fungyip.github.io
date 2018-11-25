@@ -40,9 +40,10 @@ X is non-stochastic and fixed in repeated samples (exogeneity) | $$Cov(X_s, ε_t
 Serial Independence | $$Cov(ε_s, ε_t) = 0 $$        | Serial correlation
 Homoskedasticity | $$Var(ε_t) = \sigma^2 = constant$$ | Heteroskedasticity
 No Linear Relationships |  $$\sum_{t=1}^{T} (\delta_iX_{it} + \delta_jX_{jt}) \neq 0 \text{ and } i \neq j $$                            |Multicollinearity
-Normality of disturbance | \[ε_t \sim \mathcal{N}(\mu,\,\sigma^{2})\,\]             | Outliers
+Normality of disturbance |           | Outliers
 
 <!---
+ \[ε_t \sim \mathcal{N}(\mu,\,\sigma^{2})\,\]  
 
 https://www.albert.io/blog/key-assumptions-of-ols-econometrics-review/
 http://statisticsbyjim.com/regression/ols-linear-regression-assumptions/
