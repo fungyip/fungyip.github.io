@@ -33,24 +33,31 @@ $$\mathbf{b} = \mathbf{(X'X)^{-1}X^{\prime}y}$$| OLS
 
 #### 8 Classical OLS Assumptions
 1. Linearity
+<br>
 $$Y_t = \alpha + \beta X_t + ε_t$$
 <br>
 2. Expected value of error term is zero
+<br>
 $$E(ε∣X) = 0$$   
 <br>
 3. X is non-stochastic and fixed in repeated samples
+<br>
 $$Cov(X_s, ε_t) = 0$$
 <br>
 4. Serial Independence
+<br>
 $$Cov(ε_s, ε_t) = 0 $$        
 <br>
 5. Homoskedasticity
+<br>
 $$Var(ε_t) = \sigma^2 = constant$$
 <br>
 6. No Multicollinearity
+<br>
 $$\sum_{t=1}^{T} (\delta_iX_{it} + \delta_jX_{jt}) \neq 0 \text{ and } i \neq j $$                            
 <br>
 7. Normality of error term            
+<br>
 $$ε_t \sim N(\mu,\sigma^{2}) $$
 <br>
 
