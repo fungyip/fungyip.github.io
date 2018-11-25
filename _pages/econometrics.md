@@ -22,8 +22,6 @@ b_{p-1}
 \end{array}\right]
 = \mathbf{(X'X)^{-1}X^{\prime}y}$$
 
-<br>
-
 Linear Algebra | Enter the Matrix
 ---------------|-----------------
 $$\mathbf{y} = \mathbf{Xb}$$ | Linear Regression
@@ -32,9 +30,10 @@ $$\mathbf{(X'X)^{-1}X'y =(X^{\prime}X)^{-1}(X^{\prime}X)b}$$|Multiply (X'X)-1 by
 $$\mathbf{(X'X)^{-1}X'y = Ib}$$|A matrix multiplied by its inverse is the identity matrix (I)
 $$\mathbf{(X'X)^{-1}X'y = b}$$| OLS
 $$\mathbf{b} = \mathbf{(X'X)^{-1}X^{\prime}y}$$| OLS
-<br>
 
 
+
+<!---
 #### 8 Classical OLS Assumptions
 Assumption      | Mathematical Expression            | Violation may imply
 ----------------|------------------------------------|-----------------------
