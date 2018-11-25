@@ -31,9 +31,6 @@ $$\mathbf{(X'X)^{-1}X'y = Ib}$$|A matrix multiplied by its inverse is the identi
 $$\mathbf{(X'X)^{-1}X'y = b}$$| OLS
 $$\mathbf{b} = \mathbf{(X'X)^{-1}X^{\prime}y}$$| OLS
 
-
-
-<!---
 #### 8 Classical OLS Assumptions
 Assumption      | Mathematical Expression            | Violation may imply
 ----------------|------------------------------------|-----------------------
