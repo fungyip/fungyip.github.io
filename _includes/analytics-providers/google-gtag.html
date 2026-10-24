@@ -1,0 +1,17 @@
+{% comment %}
+  Google Analytics 4 (gtag.js).
+  Enabled by setting in _config.yml:
+    analytics.provider: "google-gtag"
+    analytics.google.measurement_id: "G-XXXXXXXXXX"
+{% endcomment %}
+{% assign ga4_id = site.analytics.google.measurement_id | strip %}
+{% if ga4_id != "" and ga4_id contains "G-" %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ ga4_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ ga4_id }}');
+</script>
+{% endif %}
