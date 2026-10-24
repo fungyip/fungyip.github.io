@@ -1,3 +1,14 @@
 <!-- start custom footer snippets -->
-
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+  const blocks = document.querySelectorAll("div.language-mermaid, pre > code.language-mermaid");
+  blocks.forEach(function (el) {
+    const block = el.matches("div") ? el : el.parentElement;
+    const div = document.createElement("div");
+    div.className = "mermaid";
+    div.textContent = block.textContent;
+    block.replaceWith(div);
+  });
+  if (blocks.length) { mermaid.initialize({ startOnLoad: false }); await mermaid.run(); }
+</script>
 <!-- end custom footer snippets -->
