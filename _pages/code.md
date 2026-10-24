@@ -4,6 +4,8 @@ title: Code
 author_profile: false
 ---
 
+These projects have moved to the [Projects page](/projects/#earlier-analytics-projects).
+
 Below are the projects I have been working on:
 
 Hong Kong Population Center of Gravity

@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Fung YIP"
 title_separator          : "-"
 name                     : "Fung YIP"
-description              : "In God we trust; all others bring Data"
+description              : "AI & Data Architecture · Agentic AI · Cloud Data Platforms. Hong Kong."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  :
@@ -63,7 +63,7 @@ google_ad_slot           :
 author:
   name             : "Fung YIP"
   avatar           : "fung.png"
-  bio              : "In God we trust; all others bring Data"
+  bio              : "AI & data architect building practical data platforms and AI agents. In God we trust; all others bring data."
   location         : "Hong Kong, London"
   email            : "fung.yip@gmail.com"
   uri              :

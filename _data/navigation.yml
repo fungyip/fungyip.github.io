@@ -1,4 +1,4 @@
-# main links links
+# main links
 main:
   - title: "Projects"
     url: /projects/
@@ -9,11 +9,7 @@ main:
   - title: "Econometrics"
     url: /econometrics/
 
-  - title: "Code"
-    url: /code/
-
-#  - title: "Trips"
-#    url: /trips/
-
-  - title: "Post"
-    url: /posts/
+# "Code" is now part of Projects (/projects/#earlier-analytics-projects).
+# Re-enable "Writing" once the first post is published.
+#  - title: "Writing"
+#    url: /posts/

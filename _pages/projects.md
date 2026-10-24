@@ -14,3 +14,14 @@ Treating personal knowledge like a data platform: governed ingestion from Readwi
 Hostinger VPS · Docker Compose · Traefik · Hermes agent · Obsidian · GitHub Actions
 
 [Read the case study]({{ "/projects/knowledge-data-platform/" | relative_url }}){: .btn .btn--primary}
+
+## Earlier Analytics Projects
+
+Open-source analyses from my econometrics and data-science work in R and Python.
+
+| Project | What it explores | Code |
+|---|---|---|
+| **Hang Seng Index forecast** | Using an ARIMA model to predict Hang Seng Index movement in 2017 | [GitHub](https://github.com/fungyip/ARIMAHangSengIndex) |
+| **Hong Kong property prices** | Analysis of Hong Kong residential property price data | [GitHub](https://github.com/fungyip/HongKongPropertyPrice) |
+| **Hong Kong population centre of gravity** | How the geographic centre of Hong Kong's population has shifted | [GitHub](https://github.com/fungyip/HKPopulationCOG) |
+| **Hong Kong MTR development** | Visualising the growth of MTR stations since 1910 | [GitHub](https://github.com/fungyip/MTR) |
