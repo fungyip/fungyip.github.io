@@ -5,8 +5,3 @@ main:
 
   - title: "Econometrics"
     url: /econometrics/
-
-# "Code" (older analytics repos) is hidden until those projects are upgraded.
-# Re-enable "Writing" once the first post is published.
-#  - title: "Writing"
-#    url: /posts/
