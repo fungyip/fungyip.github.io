@@ -3,9 +3,6 @@ main:
   - title: "Projects"
     url: /projects/
 
-  - title: "Data Science"
-    url: /datascience/
-
   - title: "Econometrics"
     url: /econometrics/
 
