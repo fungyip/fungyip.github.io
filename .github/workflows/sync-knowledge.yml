@@ -1,0 +1,61 @@
+name: Sync knowledge pages
+
+on:
+  schedule:
+    - cron: "0 1 * * 0"   # Sundays 09:00 Hong Kong time
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-knowledge
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out site
+        uses: actions/checkout@v4
+
+      - name: Check out wiki-llm (read-only deploy key, selected folders only)
+        uses: actions/checkout@v4
+        with:
+          repository: fungyip/wiki-llm
+          ssh-key: ${{ secrets.WIKI_LLM_DEPLOY_KEY }}
+          path: wiki-src
+          persist-credentials: false
+          sparse-checkout: |
+            wiki
+            raw/readwise
+
+      - name: Export pages marked publish true and status reviewed
+        run: |
+          pip install --quiet pyyaml
+          python scripts/export_knowledge.py wiki-src _knowledge --report "$RUNNER_TEMP/report.md"
+          {
+            echo 'REPORT<<EOF_REPORT'
+            cat "$RUNNER_TEMP/report.md"
+            echo 'EOF_REPORT'
+          } >> "$GITHUB_ENV"
+          cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Remove private checkout
+        if: always()
+        run: rm -rf wiki-src
+
+      - name: Open or update pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: knowledge-sync
+          delete-branch: true
+          add-paths: _knowledge
+          commit-message: "Sync published knowledge pages"
+          title: "Sync published knowledge pages"
+          body: |
+            Pages marked `publish: true` and `status: reviewed` in wiki-llm.
+            Review every page before merging. Nothing is public until you merge.
+
+            ${{ env.REPORT }}

@@ -179,6 +179,14 @@ defaults:
     values:
       layout: single
       author_profile: false
+  # _knowledge (exported from wiki-llm by .github/workflows/sync-knowledge.yml)
+  - scope:
+      path: ""
+      type: knowledge
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
 
 # Plugins
 gems:
@@ -199,6 +207,9 @@ whitelist:
 collections:
   trips:
     output: true
+  knowledge:
+    output: true
+    permalink: /knowledge/:name/
 
 # Archives
 #  Type
