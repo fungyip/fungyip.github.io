@@ -1,10 +1,9 @@
 ---
+published: false  # hidden until these projects are upgraded
 permalink: /code/
 title: Code
 author_profile: false
 ---
-
-These projects have moved to the [Projects page](/projects/#earlier-analytics-projects).
 
 Below are the projects I have been working on:
 

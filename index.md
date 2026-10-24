@@ -27,11 +27,6 @@ I applied data-platform patterns to personal knowledge. Sources from Readwise, T
 
 [Read the case study]({{ "/projects/knowledge-data-platform/" | relative_url }}){: .btn .btn--primary}
 
-### Earlier Analytics Projects
-Open-source analyses from my econometrics and data-science work, including a Hang Seng Index ARIMA forecast, Hong Kong property prices, the population centre of gravity, and the development of the MTR network.
-
-[See all projects]({{ "/projects/#earlier-analytics-projects" | relative_url }}){: .btn .btn--inverse}
-
 ## What I Work On
 
 | Area | Focus |
