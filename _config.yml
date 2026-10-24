@@ -52,9 +52,9 @@ social:
 # Google Analytics 4: set provider to "google-gtag" and paste your Measurement ID (G-XXXXXXXXXX).
 # Leave provider as false to disable tracking.
 analytics:
-  provider               : false # "google-gtag" to enable GA4
+  provider               : "google-gtag" # set to false to disable tracking
   google:
-    measurement_id       : # e.g. G-XXXXXXXXXX
+    measurement_id       : G-08L3F7YL6H # GA4 web stream 16195320798
 
 # Google AdSense
 google_ad_client         :
