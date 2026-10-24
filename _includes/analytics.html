@@ -1,6 +1,13 @@
-{% if site.analytics.provider and page.analytics != false %}
+{% comment %}
+  Analytics loader. Included once, inside <head> (see _layouts/default.html).
+  Only runs in production builds (GitHub Pages), so local `jekyll serve` previews are not counted.
+  Set `analytics: false` in a page's front matter to exclude that page.
+{% endcomment %}
+{% if site.analytics.provider and page.analytics != false and jekyll.environment == "production" %}
 
 {% case site.analytics.provider %}
+{% when "google-gtag" %}
+  {% include /analytics-providers/google-gtag.html %}
 {% when "google" %}
   {% include /analytics-providers/google.html %}
 {% when "google-universal" %}

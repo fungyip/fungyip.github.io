@@ -49,10 +49,12 @@ social:
   links: # An array of links to social media profiles
 
 # Analytics
+# Google Analytics 4: set provider to "google-gtag" and paste your Measurement ID (G-XXXXXXXXXX).
+# Leave provider as false to disable tracking.
 analytics:
-  provider               : false # Universal Analytics (UA-) stopped working in 2024; add a GA4 ID here to re-enable
+  provider               : false # "google-gtag" to enable GA4
   google:
-    tracking_id          : UA-129283135-1
+    measurement_id       : # e.g. G-XXXXXXXXXX
 
 # Google AdSense
 google_ad_client         :
