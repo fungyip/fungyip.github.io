@@ -1,5 +1,5 @@
 ---
-title: "A Self-Hosted Knowledge Data Platform on Hostinger"
+title: "A Self-Hosted Knowledge Data Platform"
 permalink: /projects/knowledge-data-platform/
 excerpt: "Governed ingestion, an AI-agent pipeline, CI/CD-controlled infrastructure and a reviewed publishing path, on a single VPS."
 layout: single
@@ -15,7 +15,7 @@ author_profile: true
 
 | Project | Detail |
 |---|---|
-| **Stack** | Hostinger VPS · Docker Compose · Traefik · Hermes agent · Obsidian · Readwise · Telegram · GitHub Actions · Jekyll / GitHub Pages |
+| **Stack** | VPS · Docker Compose · Traefik · Hermes agent · Obsidian · Readwise · Telegram · GitHub Actions · Jekyll / GitHub Pages |
 | **Role** | Sole designer, builder and operator (personal project) |
 | **Period** | 30 September 2026 – present |
 | **Status** | Core platform running; deployment automation partly live; public publishing path proposed |
@@ -42,7 +42,7 @@ The design borrows directly from my day job in data architecture (data mesh, ser
 | Processing engine | Hermes `llm-wiki` skill, run on a 4-hour schedule |
 | Curated layer | `wiki/` — compiled knowledge pages |
 | Pipeline run log | `logs/INGEST-RESULTS.md` — one receipt per processed source |
-| Infrastructure as code | `hermes-hostinger-infra` repo with CI, tests and two deploy workflows |
+| Infrastructure as code | `hermes-infra` repo with CI, tests and two deploy workflows |
 | Publishing / consumption | GitHub Pages portfolio (fungyip.github.io), fed by a reviewed export |
 
 **Key outcomes so far**
@@ -94,7 +94,7 @@ flowchart TB
         ME[Me: Obsidian web, desktop, mobile]
     end
 
-    subgraph VPS["Hostinger VPS (single host)"]
+    subgraph VPS["VPS (single host)"]
         TR[Traefik<br/>TLS via Let's Encrypt]
         OB[Obsidian web container<br/>localhost only, login required]
         subgraph HC["Hermes container (UID 10000)"]
@@ -112,8 +112,8 @@ flowchart TB
     subgraph GH["GitHub (private repos)"]
         G1[(wiki-llm)]
         G2[(circle-of-life)]
-        G3[(hermes-hostinger-infra)]
-        G4[(hermes-hostinger-docs)]
+        G3[(hermes-infra)]
+        G4[(hermes-docs)]
         G5[(hermes-state-backup)]
     end
 
@@ -140,7 +140,7 @@ flowchart TB
 <summary>Plain-text version (for renderers without Mermaid)</summary>
 
 ```text
- Readwise ─┐                       ┌──────────── Hostinger VPS ─────────────┐
+ Readwise ─┐                       ┌───────────────── VPS ──────────────────┐
  Telegram ─┼──────────────────────▶│ Traefik ─▶ Obsidian web (localhost)    │
  Me ───────┘                       │                                         │
                                    │ circle-of-life (private) ──X── Hermes   │
@@ -194,8 +194,8 @@ The key design choice: **the agent does not decide what to ingest.** A root-owne
 
 | Repository | Role | Visibility |
 |---|---|---|
-| `hermes-hostinger-infra` | Executable code: Compose file, host scripts, tests, CI, deploy workflows | Private |
-| `hermes-hostinger-docs` | Architecture, ADRs, change plans, runbooks, deployment requests | Private |
+| `hermes-infra` | Executable code: Compose file, host scripts, tests, CI, deploy workflows | Private |
+| `hermes-docs` | Architecture, ADRs, change plans, runbooks, deployment requests | Private |
 | `hermes-state-backup` | Daily snapshot of agent `skills/` and `SOUL.md` | Private |
 | `wiki-llm` | Push-only backup of the agent vault | Private |
 | `circle-of-life` | Two-way backup of the personal vault | Private |
@@ -282,7 +282,7 @@ The build happened in seven phases over about four weeks.
 # apps/hermes/compose.yaml (domain generalised)
 services:
   hermes-agent:
-    image: ${HERMES_IMAGE:-ghcr.io/hostinger/hvps-hermes-agent:latest}
+    image: ${HERMES_IMAGE:-<registry>/hermes-agent:latest}
     restart: unless-stopped
     expose:
       - "4860"                     # internal only; no host port published
@@ -516,17 +516,17 @@ command="tar -czf - -C /docker/<project>/data skills SOUL.md",no-pty,no-agent-fo
 
 ---
 
-## 6. Hostinger Hosting Setup
+## 6. VPS Hosting Setup
 
 ### 6.1 Why a VPS rather than managed hosting
 {: .no_toc}
 
-| Requirement | Why a Hostinger VPS fits |
+| Requirement | Why a VPS fits |
 |---|---|
 | Long-running agent with scheduled jobs | Full root access, Docker, cron and systemd |
 | Private data on infrastructure I control | Vaults stay on my server; nothing is shared with a SaaS knowledge tool beyond the LLM API calls |
 | Low fixed cost for a personal project | One host runs agent, Obsidian web UI, reverse proxy and host jobs |
-| Fast start | Hostinger's prebuilt Hermes image and Docker templates |
+| Fast start | A prebuilt Hermes container image and Docker templates |
 
 The trade-off is that a single VPS is a single point of failure, which is why backups, provider snapshots before risky changes, and documented recovery matter more than in a managed setup.
 
@@ -535,7 +535,7 @@ The trade-off is that a single VPS is a single point of failure, which is why ba
 
 ```text
 /docker/<project>/                    Hermes Compose project
-├── compose.yaml                      deployed from hermes-hostinger-infra
+├── compose.yaml                      deployed from hermes-infra
 └── data/                             agent runtime (mounted at /opt/data)
     ├── .env                          secrets — VPS only, never in Git
     ├── SOUL.md                       agent personality  → hermes-state-backup
@@ -611,11 +611,11 @@ fungyip.github.io is a Jekyll site using the Minimal Mistakes theme, published b
 ### 7.2 Integration principle
 {: .no_toc}
 
-**Hostinger is the private workshop; GitHub Pages is the public showroom.** The agent may draft; only I publish.
+**The private VPS is the workshop; GitHub Pages is the public showroom.** The agent may draft; only I publish.
 
 ```mermaid
 flowchart LR
-    subgraph Private["Hostinger VPS (private)"]
+    subgraph Private["Private VPS"]
         W[wiki/ curated pages] --> S[I select pages<br/>publish: true]
         S --> E[public-export/<br/>sanitised copy]
         H[Hermes drafts<br/>case studies, posts] --> E

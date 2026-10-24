@@ -1,67 +1,62 @@
 ---
-title: About
+title: "Fung Yip"
 layout: single
 author_profile: true
 header:
-  #overlay_image: "images/leaves_banner.png"
   image: "../images/leaves_banner.png"
-  overlay_filter: 0 # same as adding an opacity of 0.5 to a black background
-  exceprt: "                                                                               "                                                          
+excerpt: "AI & Data Architecture · Agentic AI · Cloud Data Platforms"
 ---
-Hi! I'm Fung YIP, an Econometrician turned Data Scientist with a strong passion of predictive analytics using Algorithmic / Statistical Modelling applied into real-world situations.
 
-I love data blend in with iChing **《易經》**, discovering the nature way harmoniously flowing to ‘Yin’ & ‘Yang’ **《陰陽》**, establishing the Law of Cause and Effect **《因果關係》** and
-expressing way of simplicity through Data [0,1] Dao **《易數道》**.
+### AI & Data Architecture · Agentic AI · Cloud Data Platforms
 
-This blog will showcase some of the analyses I have been working using R or Python.
+I design and build practical AI and data systems, from enterprise data pipelines to tool-using AI agents.
 
-## Econometrics
+My background is in econometrics. I've since worked across analytics, data engineering and cloud architecture, and I like turning business problems into technical solutions people can rely on.
 
-Econometrics for me is like :heart:"love at first sight". I was first introduced by my classmate at uni that there is a thingy called "Econ" "Metric" when I was doing my Economics degree. My first regression model to build was to predict the price of meat, which is fabulous.
+I'm based in Hong Kong. At the moment I'm working on agentic workflows, knowledge systems, and the engineering needed to make AI dependable.
 
-![Alt Text](https://imgs.xkcd.com/comics/machine_learning.png)
+[View my projects]({{ "/projects/" | relative_url }}){: .btn .btn--primary} [Connect on LinkedIn](https://www.linkedin.com/in/fungyip){: .btn .btn--inverse} [GitHub](https://github.com/fungyip){: .btn .btn--inverse}
 
-I continued to study Masters in Economics whose syllabus was heavily involved in statistical modelling. This enables me to build a strong foundation on the mathematical side in which I can ride on it to life-learn machine learning.
+## Featured Work
 
-## Business Intelligence
+### A Self-Hosted Knowledge Data Platform
+I applied data-platform patterns to personal knowledge. Sources from Readwise, Telegram and opt-in notes flow through a raw-to-curated pipeline run by a self-hosted AI agent. Infrastructure is controlled by CI/CD, and privacy is enforced by infrastructure rather than prompts.
 
-I fist cut my teeth on Business Intelligence from work - building a set of KPIs to monitor company's performance. This field has evolved a lot both in technology and usage wise. Tools itself which becomes more intelligent are moving towards user-centric with strong emphasis of Data viz.
+**Shows:** agent guardrails, content-addressed ingestion, change-controlled deployment, versioned agent state.<br>
+**Status:** core platform running; some components built but not yet verified end to end. Each claim in the case study is labelled.
 
-I feel great that I have opportunities to use both <img class="inline-icon" src="../images/logo/tableau.PNG" width="30" alt="tableau icon" title="Tableau"><span class='salient'>Tableau</span> and <img class="inline-icon" src="../images/logo/qliksense.PNG" width="30" alt="qliksense icon" title="Qliksense"><span class='salient'>Qliksense</span> to apply in cooperate environment, the latter of which includes good ETL capability and now I really fall in love.
+[Read the case study]({{ "/projects/knowledge-data-platform/" | relative_url }}){: .btn .btn--primary}
 
-## Data Science
-Data Scientist is the most sexiest job of the 21st century. That said, I don't feel like I am sexy at all. This field has evolved amazingly fast and I expect this term data science will be replaced by AI or other synonyms terms in the coming years. I use <img class="inline-icon" src="../images/logo/r.png" width="25" alt="r icon" title="R"><span class='salient'>R</span> a lot, making use of tidyverse concept and now increasingly use <img class="inline-icon" src="../images/logo/python.PNG" width="25" alt="python icon" title="Python"><span class='salient'>Python</span> for analyses.
+## What I Work On
 
-As I am Econometrician turned Data Scientist, I love Time Series forecasting a lot. I 'kaizen' to learn other type of machine learning to add my Data Science arsenal.
+| Area | Focus |
+|---|---|
+| **Data architecture** | Data mesh, ingestion patterns, data contracts, SAP and OData extraction |
+| **Cloud data platforms** | AWS serverless data lakes and integration |
+| **Agentic AI** | Tool-using agents, approval controls, state and recovery, evaluation |
+| **Analytics** | Econometrics, time-series forecasting, BI and operational metrics |
 
+## How Econometrics Shapes My Approach
 
+I discovered econometrics during my economics degree. My first regression model predicted the price of meat, and I was hooked. A master's in economics, heavy on statistical modelling, then gave me the mathematical foundation I've built on ever since.
 
-<!---
-<img class="inline-icon" src="../images/logo/qliksense.PNG" width="30" alt="qliksense icon" title="Qliksense"><span class='salient'>Qliksense</span>
-<img class="inline-icon" src="../images/logo/tableau.PNG" width="30" alt="tableau icon" title="Tableau"><span class='salient'>Tableau</span>
-<img class="inline-icon" src="../images/logo/iching.jpg" width="30" alt="iching icon" title="iChing"><span class='salient'>iChing</span>
+That training still shapes how I work: start with a clear question, be explicit about assumptions, measure before claiming, and state the limitations. I apply the same discipline to data platforms and AI systems. In my case studies, every capability is marked as live, built, proposed or open, so readers can see what is working, what is still in progress, and what is only planned.
 
+## Experience and Tools
 
---->
-
+- **Business intelligence:** I designed KPI frameworks to monitor company performance and built dashboards in Tableau and Qlik Sense, using Qlik's ETL capabilities for data preparation.
+- **Data science:** I work in R (tidyverse) and Python, with a particular interest in time-series forecasting.
+- **Data engineering and cloud:** I build data-mesh migrations, ingestion pipelines, SAP/OData extraction and AWS serverless data-lake integration.
+- **AI engineering:** I work on LLM agents, harness engineering, knowledge management, and AI-assisted software development.
 
 ## DataiChing
-<img class="inline-icon" src="../images/logo/iching.jpg" width="30" alt="iching icon" title="iChing"><span class='salient'>iChing</span>
- is also known as Classic of Changes.  Just like Confucius says,
- >"If Heaven gave me another 50 years to live, I would spend them studying iChing and perhaps then I would beware myself of troubles."
 
- Confucius wishes he has more time to learn iChing and dedicated himself to it.
- For me same same - Data & iChing will be my **lifetime project** to blend two 2gether.
+The *I Ching* (《易經》, the Classic of Changes) has fascinated me for years. Confucius is said to have wished for fifty more years to study it.
 
+DataiChing is my long-running personal project exploring what the *I Ching* and data thinking have in common: change as the normal state of a system, balance between opposing forces (陰陽, Yin and Yang), cause and effect (因果關係), and the idea that simple binary building blocks can describe complex patterns (易數道, the Dao of numbers [0,1]).
 
-### Disclaimer
-The is my personal project done in my spare time. The views and opinions expressed here are mine alone and do not represent the views of my previous or current employers. 
+## Contact
 
+I'm happy to talk about data architecture, agentic AI, or knowledge systems. You can reach me by [email](mailto:fung.yip@gmail.com) or on [LinkedIn](https://www.linkedin.com/in/fungyip).
 
-
-
-
-<!-- ### Digital Analytics
-
-Digital Analytics has gained popularity as O2O took off. When I was in newspaper industry which needs to keep track of users online behavior and consumption. I 'kaizen' to learn how to track an app usage, attempting to understand the whole online ecosystem. Google Analytics is the main tool I use for digital  for tracking analyses
---->
+<small>This is a personal site maintained in my spare time. The views expressed here are my own and do not represent those of any current or previous employer.</small>

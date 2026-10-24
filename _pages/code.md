@@ -1,4 +1,5 @@
 ---
+published: false  # hidden until these projects are upgraded
 permalink: /code/
 title: Code
 author_profile: false
