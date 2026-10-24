@@ -1,4 +1,5 @@
 ---
+published: false  # hidden until the first post is published
 layout: archive
 author_profile: false
 permalink: /posts/

@@ -50,7 +50,7 @@ social:
 
 # Analytics
 analytics:
-  provider               : "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               : false # Universal Analytics (UA-) stopped working in 2024; add a GA4 ID here to re-enable
   google:
     tracking_id          : UA-129283135-1
 
