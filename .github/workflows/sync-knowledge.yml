@@ -32,6 +32,8 @@ jobs:
             raw/readwise
 
       - name: Export pages marked publish true and status reviewed
+        env:
+          PRIVATE_TERMS: ${{ secrets.PRIVATE_TERMS }}
         run: |
           pip install --quiet pyyaml
           python scripts/export_knowledge.py wiki-src _knowledge --report "$RUNNER_TEMP/report.md"

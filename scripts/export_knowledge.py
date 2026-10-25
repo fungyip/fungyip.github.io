@@ -8,7 +8,17 @@ A page is exported only when its front matter has BOTH:
     publish: true      (set by you in Obsidian, never by Hermes)
     status: reviewed
 
-Safety rules
+Safety rules (a page must pass ALL of them)
+- Source allow-list: every entry in source_paths must be under raw/readwise/
+  or raw/manual/, and source_origin (if set) must be readwise or manual.
+  Pages built from the personal vault (raw/circle-of-life/), work project
+  notes, or with no listed sources are never exported.
+- Opt-out labels: a page is never exported if its front matter has
+  private: true, visibility: private|personal|work|internal, or a tag such as
+  work, personal, private, confidential, internal, family (see OPT_OUT_TAGS).
+- Extra private terms (names of people, employer, clients, projects) can be
+  supplied in the PRIVATE_TERMS environment variable, one per line. In CI this
+  comes from a GitHub secret so the terms themselves are never made public.
 - Pages that mention a private term (employer, servers, personal notes,
   credentials) are skipped and listed in the report. They are never exported.
 - Only title, type, updated and confidence are copied from front matter.
@@ -21,6 +31,7 @@ Safety rules
   swapped into place. If anything fails, the existing _knowledge/ is untouched.
 """
 import argparse
+import os
 import pathlib
 import re
 import shutil
@@ -37,6 +48,16 @@ BLOCK = re.compile(
     r"|\b(?:\d{1,3}\.){3}\d{1,3}\b",
     re.I,
 )
+# Extra terms kept out of this public repo (GitHub secret PRIVATE_TERMS).
+_extra = [t.strip() for t in os.environ.get("PRIVATE_TERMS", "").splitlines() if t.strip()]
+EXTRA = re.compile("|".join(re.escape(t) for t in _extra), re.I) if _extra else None
+
+ALLOWED_SOURCE_PREFIXES = ("raw/readwise/", "raw/manual/")
+ALLOWED_ORIGINS = {"readwise", "manual"}
+OPT_OUT_TAGS = {"work", "personal", "private", "confidential", "internal",
+                "family", "health", "finance", "do-not-publish", "no-publish"}
+OPT_OUT_VISIBILITY = {"private", "personal", "work", "internal", "confidential"}
+
 KEEP = ["title", "type", "updated", "confidence"]
 TRACKING = re.compile(r"^(utm_|share_id$|si$|ref$|ref_src$|fbclid$|gclid$|igshid$)")
 
@@ -51,6 +72,40 @@ def split_front_matter(text: str):
     if not m:
         return {}, text
     return (yaml.safe_load(m.group(1)) or {}), m.group(2)
+
+
+def as_list(value):
+    if value is None:
+        return []
+    return value if isinstance(value, list) else [value]
+
+
+def opt_out_reason(fm: dict):
+    """Return why the page is excluded by its labels or sources, or None."""
+    if fm.get("private") is True:
+        return "private: true"
+    vis = str(fm.get("visibility", "")).strip().lower()
+    if vis in OPT_OUT_VISIBILITY:
+        return f"visibility: {vis}"
+    tags = {str(t).strip().lstrip("#").lower() for t in as_list(fm.get("tags"))}
+    hit = sorted(tags & OPT_OUT_TAGS)
+    if hit:
+        return f"tag: {hit[0]}"
+    origin = str(fm.get("source_origin") or "").strip().lower()
+    if origin and origin not in ALLOWED_ORIGINS:
+        return f"source_origin: {origin}"
+    paths = [str(p) for p in as_list(fm.get("source_paths"))]
+    if not paths:
+        return "no source_paths (cannot confirm sources are public)"
+    for sp in paths:
+        if not sp.startswith(ALLOWED_SOURCE_PREFIXES):
+            return f"non-public source: {sp.split('/')[1] if '/' in sp else sp}"
+    return None
+
+
+def private_hit(text: str):
+    m = BLOCK.search(text) or (EXTRA.search(text) if EXTRA else None)
+    return m.group(0) if m else None
 
 
 def clean_url(url: str) -> str:
@@ -121,7 +176,7 @@ def main():
     ap.add_argument("--report", type=pathlib.Path)
     args = ap.parse_args()
 
-    candidates, drafts, blocked = {}, [], []
+    candidates, drafts, blocked, excluded = {}, [], [], []
     for f in sorted((args.src / "wiki").rglob("*.md")):
         fm, body = split_front_matter(f.read_text(encoding="utf-8"))
         if fm.get("publish") is not True:
@@ -130,9 +185,13 @@ def main():
         if fm.get("status") != "reviewed":
             drafts.append(f"{rel} (status: {fm.get('status')})")
             continue
-        hit = BLOCK.search(body) or BLOCK.search(yaml.safe_dump(fm))
+        reason = opt_out_reason(fm)
+        if reason:
+            excluded.append(f"{rel} ({reason})")
+            continue
+        hit = private_hit(body) or private_hit(yaml.safe_dump(fm, allow_unicode=True))
         if hit:
-            blocked.append(f"{rel} (matched '{hit.group(0)}')")
+            blocked.append(f"{rel} (matched a private term)")
             continue
         candidates[slugify(f.stem)] = (rel, fm, body)
 
@@ -146,9 +205,9 @@ def main():
             + "---\n{% raw %}\n" + convert(body, args.src, candidates) + "{% endraw %}\n"
         )
         # Second check on the final output
-        hit = BLOCK.search(text)
+        hit = private_hit(text)
         if hit:
-            blocked.append(f"{rel} (matched '{hit.group(0)}' after conversion)")
+            blocked.append(f"{rel} (matched a private term after conversion)")
             continue
         (tmp / f"{slug}.md").write_text(text, encoding="utf-8")
         exported.append(f"{rel} -> /knowledge/{slug}/")
@@ -163,6 +222,7 @@ def main():
     lines = [f"Exported {len(exported)} page(s)."]
     for title, items in (("Exported", exported),
                          ("Skipped: flagged but not `status: reviewed`", drafts),
+                         ("Excluded: work, personal or non-public source", excluded),
                          ("Blocked: contains a private term", blocked)):
         if items:
             lines += ["", f"### {title}", *[f"- {i}" for i in items]]
@@ -170,6 +230,10 @@ def main():
     print(report)
     if args.report:
         args.report.write_text(report, encoding="utf-8")
+    if not EXTRA:
+        print("::warning::PRIVATE_TERMS is empty; only the built-in term list is checked.")
+    for b in excluded:
+        print(f"::notice::Excluded from publishing: {b}")
     for b in blocked:
         print(f"::warning::Blocked from publishing: {b}")
 
