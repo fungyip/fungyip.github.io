@@ -56,6 +56,8 @@ bash tests/build-analytics.sh
 
 The build script creates enabled production, development, and default-off production test destinations under `_site/`. All use the fake `G-TEST000000` ID, and the enabled test config opts the privacy page out for a real `analytics: false` fixture; test sources and documentation are excluded from the built site.
 
+The `vendor/bundle` dependency directory is also excluded: GitHub's Ruby cache places gem sources there, and their internal Jekyll templates must never be interpreted as portfolio pages or published.
+
 Install browser tooling outside the legacy npm dependency tree, then run:
 
 ```sh

@@ -132,6 +132,8 @@ exclude:
   - package-lock.json
   - test-results
   - playwright-report
+  # ruby/setup-ruby installs cached gems here; never render their templates.
+  - vendor/bundle
 keep_files:
   - .git
   - .svn

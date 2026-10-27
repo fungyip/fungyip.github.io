@@ -49,7 +49,8 @@ test("built production default and development do not load the custom adapter", 
   assert.doesNotMatch(production, /src="[^"]*portfolio-analytics\.js/);
   assert.match(production, /gtag\/js\?id=G-TEST000000/);
   assert.doesNotMatch(development, /gtag\/js\?id=|src="[^"]*portfolio-analytics\.js/);
-  for (const folder of ["tests", "docs"]) assert.equal(fs.existsSync(path.join(root, folder)), false);
+  for (const folder of ["tests", "docs", "vendor/bundle"])
+    assert.equal(fs.existsSync(path.join(root, folder)), false);
 });
 
 test("eligible build has one config and loader; explicit page opt-out suppresses both", async () => {
