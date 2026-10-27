@@ -1,6 +1,8 @@
 ---
 permalink: /econometrics/
 title: Econometrics
+analytics_page_type: reference
+analytics_content_id: econometrics
 use_math: true
 author_profile: false
 ---

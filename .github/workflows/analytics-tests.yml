@@ -1,0 +1,36 @@
+name: Portfolio analytics tests
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  analytics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Unit tests
+        run: node --test tests/portfolio-analytics.test.cjs
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Build test-only destinations
+        run: bash tests/build-analytics.sh
+        env:
+          JEKYLL_GITHUB_TOKEN: ${{ github.token }}
+      # Isolate modern browser tools from this legacy site's node-sass package.
+      - name: Install browser test tooling
+        run: |
+          npm install --prefix "$RUNNER_TEMP/browser-tools" --no-audit --no-fund playwright@1.59.0
+          "$RUNNER_TEMP/browser-tools/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Browser tests (Google endpoints blocked, fake measurement ID)
+        run: NODE_PATH="$RUNNER_TEMP/browser-tools/node_modules" node --test tests/portfolio-analytics.browser.test.cjs

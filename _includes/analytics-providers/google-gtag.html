@@ -12,6 +12,14 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  {% if site.analytics.portfolio_events == true %}
+  {% include analytics-context.html %}
+  gtag('set', {
+    page_type: {{ analytics_page_type | jsonify | replace: '<', '\u003c' }},
+    content_id: {{ analytics_content_id | jsonify | replace: '<', '\u003c' }},
+    tracking_schema_version: "1.0"
+  });
+  {% endif %}
   gtag('config', '{{ ga4_id }}');
 </script>
 {% endif %}

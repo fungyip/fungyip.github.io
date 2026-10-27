@@ -2,9 +2,12 @@
 main:
   - title: "Projects"
     url: /projects/
+    analytics_id: projects
 
   - title: "Econometrics"
     url: /econometrics/
+    analytics_id: econometrics
 
   - title: "Knowledge"
     url: /knowledge/
+    analytics_id: knowledge

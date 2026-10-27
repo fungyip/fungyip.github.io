@@ -4,6 +4,8 @@ permalink: /projects/knowledge-data-platform/
 excerpt: "Governed ingestion, an AI-agent pipeline, CI/CD-controlled infrastructure and a reviewed publishing path, on a single VPS."
 layout: single
 author_profile: true
+analytics_page_type: case_study
+analytics_content_id: knowledge_data_platform
 ---
 
 <style>.page__content .sidebar__right{float:none !important;width:auto !important;margin:0 0 2em 0 !important;position:static !important}</style>
