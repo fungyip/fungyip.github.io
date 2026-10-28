@@ -1,0 +1,30 @@
+# Featured project cards. Rendered by _includes/featured-project-card.html.
+# Every `*_target` / `analytics_*` value must be a lowercase slug so it passes
+# the allow-list in assets/js/portfolio-analytics.js.
+hkgeo:
+  title: "HKGeo: Where is Hong Kong's population centre?"
+  kicker: "Interactive geospatial analysis"
+  status: live            # live | built | proposed | open (same labels as the case studies)
+  summary: >-
+    An interactive Leaflet map of Hong Kong's population-weighted centre of gravity,
+    built from the 2021 Population Census. It compares 452 District Council
+    Constituency Areas with 173 Housing Market Areas, and lets you change an
+    area's population to see how far the centre moves.
+  highlight: >-
+    Revised method: coordinates are projected to the Hong Kong 1980 Grid (EPSG:2326)
+    before averaging, and a geocoding error from the legacy analysis is removed.
+    Corrected 2001 to 2011 shift: 480.6 m west.
+  tags:
+    - Python
+    - GeoPandas
+    - pyproj
+    - Leaflet
+    - EPSG:2326
+    - 2021 Census
+  thumbnail: /images/projects/hkgeo-thumb.jpg
+  thumbnail_webp: /images/projects/hkgeo-thumb.webp
+  thumbnail_alt: "HKGeo map of Hong Kong with population density shading by district and a red marker for the population centre near Tsuen Wan and Kowloon"
+  demo_url: /HKGeo/                        # same origin, so it counts as portfolio_navigation
+  analytics_target: hkgeo
+  repo_url: https://github.com/fungyip/HKGeo
+  method_url: https://github.com/fungyip/HKPopulationCOG

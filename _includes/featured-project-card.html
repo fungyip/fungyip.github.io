@@ -1,0 +1,80 @@
+{% comment %}
+  Featured project card.
+
+  Usage:
+    {% include featured-project-card.html id="hkgeo" placement="featured_work" link_prefix="home" %}
+
+  Parameters:
+    id           key in _data/featured_projects.yml            (required)
+    placement    analytics placement: featured_work | project_list (default: featured_work)
+    link_prefix  analytics link-id prefix, e.g. home | projects    (default: home)
+    heading      heading level for the title, 2-4                  (default: 3)
+{% endcomment %}
+{% assign p = site.data.featured_projects[include.id] %}
+{% if p %}
+{% assign placement = include.placement | default: "featured_work" %}
+{% assign prefix = include.link_prefix | default: "home" %}
+{% assign h = include.heading | default: 3 %}
+{% assign status_labels = "live:Live,built:Built – not yet verified,proposed:Proposed,open:Open question" | split: "," %}
+{% assign status_label = p.status %}
+{% for pair in status_labels %}{% assign kv = pair | split: ":" %}{% if kv[0] == p.status %}{% assign status_label = kv[1] %}{% endif %}{% endfor %}
+{% assign title_id = "project-card-" | append: include.id | append: "-title" %}
+
+<article class="project-card" id="project-card-{{ include.id }}" aria-labelledby="{{ title_id }}">
+  <a class="project-card__media" href="{{ p.demo_url | relative_url }}" tabindex="-1" aria-hidden="true"
+     data-analytics-event="portfolio_navigation" data-analytics-placement="{{ placement }}"
+     data-analytics-link-id="{{ prefix }}_{{ include.id }}_thumbnail" data-analytics-target="{{ p.analytics_target }}">
+    <picture>
+      {% if p.thumbnail_webp %}<source srcset="{{ p.thumbnail_webp | relative_url }}" type="image/webp">{% endif %}
+      <img src="{{ p.thumbnail | relative_url }}" alt="{{ p.thumbnail_alt | escape }}"
+           width="800" height="450" loading="lazy" decoding="async">
+    </picture>
+    <span class="project-card__badge project-card__badge--{{ p.status }}">{{ status_label }}</span>
+  </a>
+
+  <div class="project-card__body">
+    {% if p.kicker %}<p class="project-card__kicker">{{ p.kicker }}</p>{% endif %}
+    <h{{ h }} class="project-card__title" id="{{ title_id }}">
+      <a href="{{ p.demo_url | relative_url }}"
+         data-analytics-event="portfolio_navigation" data-analytics-placement="{{ placement }}"
+         data-analytics-link-id="{{ prefix }}_{{ include.id }}_title" data-analytics-target="{{ p.analytics_target }}">{{ p.title }}</a>
+    </h{{ h }}>
+
+    <p class="project-card__summary">{{ p.summary }}</p>
+    {% if p.highlight %}
+    <details class="project-card__more">
+      <summary>What is new in the method</summary>
+      <p>{{ p.highlight }}</p>
+    </details>
+    {% endif %}
+
+    {% if p.tags %}
+    <ul class="project-card__tags" aria-label="Technologies and data">
+      {% for tag in p.tags %}<li>{{ tag }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="project-card__actions">
+      <a class="btn btn--primary" href="{{ p.demo_url | relative_url }}"
+         data-analytics-event="portfolio_navigation" data-analytics-placement="{{ placement }}"
+         data-analytics-link-id="{{ prefix }}_{{ include.id }}_demo" data-analytics-target="{{ p.analytics_target }}">
+        <i class="fa fa-map-o" aria-hidden="true"></i> Open the live map
+      </a>
+      {% if p.repo_url %}
+      <a class="btn btn--inverse" href="{{ p.repo_url }}" rel="noopener"
+         data-analytics-event="resource_click" data-analytics-placement="{{ placement }}"
+         data-analytics-link-id="{{ prefix }}_{{ include.id }}_repo" data-analytics-destination="github_repository">
+        <i class="fa fa-github" aria-hidden="true"></i> Source code
+      </a>
+      {% endif %}
+      {% if p.method_url %}
+      <a class="btn btn--inverse" href="{{ p.method_url }}" rel="noopener"
+         data-analytics-event="resource_click" data-analytics-placement="{{ placement }}"
+         data-analytics-link-id="{{ prefix }}_{{ include.id }}_method" data-analytics-destination="github_repository">
+        <i class="fa fa-book" aria-hidden="true"></i> Methodology
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</article>
+{% endif %}

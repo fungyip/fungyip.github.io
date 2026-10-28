@@ -211,3 +211,23 @@ test("source keeps all existing gates and one config owner", () => {
   assert.doesNotMatch(fs.readFileSync("assets/js/portfolio-analytics.js", "utf8"),
     /localStorage|sessionStorage|document\.cookie/);
 });
+
+test("HKGeo featured card links pass the allow-list", () => {
+  const demo = buildLinkEvent(context, anchor("portfolio_navigation", {
+    "data-analytics-placement": "featured_work",
+    "data-analytics-link-id": "home_hkgeo_demo",
+    "data-analytics-target": "hkgeo"
+  }, "/HKGeo/"), current);
+  assert.equal(demo.params.destination_path, "/HKGeo/");
+  assert.equal(demo.params.target_content_id, "hkgeo");
+  const repo = buildLinkEvent(context, anchor("resource_click", {
+    "data-analytics-placement": "featured_work",
+    "data-analytics-link-id": "home_hkgeo_repo",
+    "data-analytics-destination": "github_repository"
+  }, "https://github.com/fungyip/HKGeo"), current);
+  assert.equal(repo.params.destination_type, "github_repository");
+  // Wrong case or a deep path must not be tracked as the HKGeo target.
+  assert.equal(buildLinkEvent(context, anchor("portfolio_navigation", {
+    "data-analytics-target": "hkgeo"
+  }, "/hkgeo/"), current), null);
+});

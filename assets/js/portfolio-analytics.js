@@ -15,7 +15,8 @@
     projects: "/projects/",
     econometrics: "/econometrics/",
     knowledge: "/knowledge/",
-    knowledge_data_platform: "/projects/knowledge-data-platform/"
+    knowledge_data_platform: "/projects/knowledge-data-platform/",
+    hkgeo: "/HKGeo/"
   };
   // Generated knowledge pages are overwritten by the publishing sync. Annotate
   // only these exact reviewed citations at runtime instead of modifying exports.
