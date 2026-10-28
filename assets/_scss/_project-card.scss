@@ -1,0 +1,226 @@
+/* ==========================================================================
+   FEATURED PROJECT CARD
+   Uses the theme's own variables and breakpoints so it matches the site.
+   Import in assets/_scss/main.scss after "archive".
+   ========================================================================== */
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 1.5em 0 2em;
+  overflow: hidden;
+  background: $background-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+
+  &:hover,
+  &:focus-within {
+    border-color: mix(#fff, $gray, 70%);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Side-by-side from medium screens up. The main column is narrow because of
+     the author sidebar, so wait for $medium-wide before splitting. */
+  @include breakpoint($medium-wide) {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  }
+
+  &--stacked {
+    @include breakpoint($medium-wide) { grid-template-columns: 1fr; }
+  }
+}
+
+.project-card__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: $lighter-gray;
+  border-bottom: 1px solid $border-color;
+
+  @include breakpoint($medium-wide) {
+    aspect-ratio: auto;
+    min-height: 100%;
+    border-bottom: 0;
+    border-right: 1px solid $border-color;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 45% 50%;
+    transition: transform 0.6s ease;
+  }
+
+  .project-card:hover & img { transform: scale(1.03); }
+
+  &.is-broken img { display: none; }
+  &.is-broken::after {
+    content: "HKGeo";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-family: $header-font-family;
+    font-size: $type-size-3;
+    color: $gray;
+  }
+}
+
+.project-card__badge {
+  position: absolute;
+  top: 0.75em;
+  left: 0.75em;
+  padding: 0.2em 0.6em;
+  font-family: $sans-serif;
+  font-size: $type-size-7;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: $dark-gray;
+  border-radius: $border-radius;
+
+  &--live     { background: mix(#000, $success-color, 30%); }
+  &--built    { background: mix(#000, $warning-color, 25%); }
+  &--proposed { background: $dark-gray; }
+  &--open     { background: mix(#000, $info-color, 30%); }
+
+  &--live::before {
+    content: "";
+    display: inline-block;
+    width: 0.55em;
+    height: 0.55em;
+    margin-right: 0.4em;
+    vertical-align: 0.05em;
+    background: #c9f5c9;
+    border-radius: 50%;
+  }
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  padding: 1.1em 1.25em 1.25em;
+  min-width: 0;
+
+  > * { margin: 0; }
+}
+
+.project-card__kicker {
+  font-family: $sans-serif;
+  font-size: $type-size-7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $gray;
+}
+
+.project-card__title {
+  margin: 0;
+  padding: 0;
+  font-size: $type-size-4;
+  line-height: 1.3;
+  border: 0;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    &:hover, &:focus { color: $link-color-hover; text-decoration: underline; }
+  }
+}
+
+.project-card__summary {
+  font-size: $type-size-p;
+  line-height: 1.6;
+}
+
+.project-card__more {
+  font-size: $type-size-6;
+  color: $text-color;
+
+  summary {
+    cursor: pointer;
+    color: $link-color-hover;
+    &:hover { text-decoration: underline; }
+  }
+  p { margin: 0.4em 0 0; line-height: 1.55; }
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin: 0.1em 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+    padding: 0.15em 0.6em;
+    font-family: $monospace;
+    font-size: $type-size-7;
+    color: $dark-gray;
+    background: $code-background-color;
+    border: 1px solid $border-color;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+}
+
+.project-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: auto;
+  padding-top: 0.4em;
+
+  .btn { margin: 0; }
+
+  /* Full-width buttons on phones for easy tapping. */
+  @media (max-width: $small) {
+    flex-direction: column;
+    .btn { display: block; text-align: center; }
+  }
+}
+
+/* Grid wrapper for several cards on /projects/. */
+.project-grid {
+  display: grid;
+  gap: 1.25em;
+  grid-template-columns: 1fr;
+
+  .project-card { margin: 0; }
+
+  @include breakpoint($large) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    .project-card { grid-template-columns: 1fr; }
+    .project-card__media { aspect-ratio: 16 / 9; min-height: 0; border-right: 0; border-bottom: 1px solid $border-color; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card__media img { transition: none; }
+  .project-card:hover .project-card__media img { transform: none; }
+}
+
+@media print {
+  .project-card { box-shadow: none; break-inside: avoid; }
+  .project-card__actions { display: none; }
+}
+
+/* Set by assets/js/project-card.js for cards that start below the fold. */
+.project-card.will-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.project-card.will-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}

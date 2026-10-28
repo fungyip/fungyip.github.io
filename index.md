@@ -21,6 +21,8 @@ I'm based in Hong Kong. At the moment I'm working on agentic workflows, knowledg
 
 ## Featured Work
 
+{% include featured-project-card.html id="hkgeo" placement="featured_work" link_prefix="home" %}
+
 ### A Self-Hosted Knowledge Data Platform
 I applied data-platform patterns to personal knowledge. Sources from Readwise, Telegram and opt-in notes flow through a raw-to-curated pipeline run by a self-hosted AI agent. Infrastructure is controlled by CI/CD, and privacy is enforced by infrastructure rather than prompts.
 
