@@ -53,6 +53,10 @@ social:
 # Leave provider as false to disable tracking.
 analytics:
   provider               : "google-gtag" # set to false to disable tracking
+  # New semantic events are opt-in pending consent/privacy and GA4 Admin review.
+  # Enabling this loads the adapter; a consent integration must also call
+  # window.PortfolioAnalytics.setConsent(true) on each eligible document.
+  portfolio_events       : false
   google:
     measurement_id       : G-08L3F7YL6H # GA4 web stream 16195320798
 
@@ -122,6 +126,14 @@ exclude:
   - Rakefile
   - README
   - tmp
+  - tests
+  - docs
+  - playwright.config.cjs
+  - package-lock.json
+  - test-results
+  - playwright-report
+  # ruby/setup-ruby installs cached gems here; never render their templates.
+  - vendor/bundle
 keep_files:
   - .git
   - .svn

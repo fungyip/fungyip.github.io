@@ -13,7 +13,7 @@
               {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}"{% if link.analytics_id %} data-analytics-event="portfolio_navigation" data-analytics-placement="nav" data-analytics-link-id="nav_{{ link.analytics_id | escape }}" data-analytics-target="{{ link.analytics_id | escape }}"{% endif %}>{{ link.title }}</a></li>
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>

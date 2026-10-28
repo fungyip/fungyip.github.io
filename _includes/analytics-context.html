@@ -1,0 +1,7 @@
+{% comment %}Bounded metadata only. Keep current-page and target IDs separate.{% endcomment %}
+{% assign analytics_page_type = page.analytics_page_type | default: "other" %}
+{% assign analytics_content_id = page.analytics_content_id | default: "other" %}
+{% if page.collection == "knowledge" %}
+  {% assign analytics_page_type = "knowledge_note" %}
+  {% assign analytics_content_id = page.analytics_content_id | default: page.slug | replace: "-", "_" %}
+{% endif %}

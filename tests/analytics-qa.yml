@@ -1,0 +1,13 @@
+url: "http://127.0.0.1:4400"
+baseurl: ""
+repository: "fungyip/fungyip.github.io"
+analytics:
+  provider: "google-gtag"
+  portfolio_events: true
+  google:
+    measurement_id: "G-TEST000000"
+defaults:
+  - scope:
+      path: "_pages/privacy.md"
+    values:
+      analytics: false

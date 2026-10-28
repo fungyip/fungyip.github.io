@@ -1,0 +1,8 @@
+{% if site.analytics.provider == "google-gtag" and site.analytics.portfolio_events == true and page.analytics != false and jekyll.environment == "production" %}
+  {% assign ga4_id = site.analytics.google.measurement_id | strip %}
+  {% if ga4_id != "" and ga4_id contains "G-" %}
+    {% include analytics-context.html %}
+    <script id="portfolio-analytics-context" type="application/json">{"measurement_id":{{ ga4_id | jsonify | replace: '<', '\u003c' }},"page_type":{{ analytics_page_type | jsonify | replace: '<', '\u003c' }},"content_id":{{ analytics_content_id | jsonify | replace: '<', '\u003c' }},"tracking_schema_version":"1.0"}</script>
+    <script defer src="{{ '/assets/js/portfolio-analytics.js' | relative_url }}"></script>
+  {% endif %}
+{% endif %}

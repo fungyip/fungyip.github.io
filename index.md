@@ -2,6 +2,8 @@
 title: "Fung Yip"
 layout: single
 author_profile: true
+analytics_page_type: home
+analytics_content_id: home
 header:
   image: "../images/leaves_banner.png"
 excerpt: "AI & Data Architecture · Agentic AI · Cloud Data Platforms"
@@ -15,7 +17,7 @@ My background is in econometrics. I've since worked across analytics, data engin
 
 I'm based in Hong Kong. At the moment I'm working on agentic workflows, knowledge systems, and the engineering needed to make AI dependable.
 
-[View my projects]({{ "/projects/" | relative_url }}){: .btn .btn--primary} [Connect on LinkedIn](https://www.linkedin.com/in/fungyip){: .btn .btn--inverse} [GitHub](https://github.com/fungyip){: .btn .btn--inverse}
+[View my projects]({{ "/projects/" | relative_url }}){: .btn .btn--primary data-analytics-event="portfolio_navigation" data-analytics-placement="hero" data-analytics-link-id="home_projects" data-analytics-target="projects"} [Connect on LinkedIn](https://www.linkedin.com/in/fungyip){: .btn .btn--inverse data-analytics-event="contact_click" data-analytics-placement="hero" data-analytics-link-id="home_linkedin" data-analytics-channel="linkedin"} [GitHub](https://github.com/fungyip){: .btn .btn--inverse data-analytics-event="resource_click" data-analytics-placement="hero" data-analytics-link-id="home_github" data-analytics-destination="github_profile"}
 
 ## Featured Work
 
@@ -25,7 +27,7 @@ I applied data-platform patterns to personal knowledge. Sources from Readwise, T
 **Shows:** agent guardrails, content-addressed ingestion, change-controlled deployment, versioned agent state.<br>
 **Status:** core platform running; some components built but not yet verified end to end. Each claim in the case study is labelled.
 
-[Read the case study]({{ "/projects/knowledge-data-platform/" | relative_url }}){: .btn .btn--primary}
+[Read the case study]({{ "/projects/knowledge-data-platform/" | relative_url }}){: .btn .btn--primary data-analytics-event="portfolio_navigation" data-analytics-placement="featured_work" data-analytics-link-id="home_case_study" data-analytics-target="knowledge_data_platform"}
 
 ## What I Work On
 
@@ -57,6 +59,6 @@ DataiChing is my long-running personal project exploring what the *I Ching* and 
 
 ## Contact
 
-I'm happy to talk about data architecture, agentic AI, or knowledge systems. You can reach me by [email](mailto:fung.yip@gmail.com) or on [LinkedIn](https://www.linkedin.com/in/fungyip).
+I'm happy to talk about data architecture, agentic AI, or knowledge systems. You can reach me by [email](mailto:fung.yip@gmail.com){: data-analytics-event="contact_click" data-analytics-placement="contact" data-analytics-link-id="home_contact_email" data-analytics-channel="email"} or on [LinkedIn](https://www.linkedin.com/in/fungyip){: data-analytics-event="contact_click" data-analytics-placement="contact" data-analytics-link-id="home_contact_linkedin" data-analytics-channel="linkedin"}.
 
 <small>This is a personal site maintained in my spare time. The views expressed here are my own and do not represent those of any current or previous employer.</small>

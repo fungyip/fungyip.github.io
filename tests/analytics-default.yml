@@ -1,0 +1,6 @@
+url: "http://127.0.0.1:4400"
+baseurl: ""
+repository: "fungyip/fungyip.github.io"
+analytics:
+  google:
+    measurement_id: "G-TEST000000"
